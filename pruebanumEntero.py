@@ -5,10 +5,7 @@ class serie_num:
     def is_prime(self, num) :
         if num < 2:
             return False
-        for i in range(2, int(num ** 0.5 + 1)):
-            if num % i == 0:
-                return False
-            return True
+        return not any(num % i == 0 for i in range(2, int(num ** 0.5) + 1))
         
     def generate_primes(self, num):
         number = 2
